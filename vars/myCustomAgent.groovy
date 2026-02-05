@@ -1,7 +1,7 @@
 def call(Closure body) {
     def podYaml = libraryResource 'my_pod.yaml'
     podTemplate(yaml: podYaml,
-               showArchivedLog: false
+               showRawYaml: false
     ) {
         node(POD_LABEL) {
             body.call() // Executes the pipeline stages defined in the Jenkinsfile
